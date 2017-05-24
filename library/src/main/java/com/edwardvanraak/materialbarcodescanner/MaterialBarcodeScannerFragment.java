@@ -344,6 +344,7 @@ public class MaterialBarcodeScannerFragment extends Fragment {
     }
 
     public void resumeCamera() {
+        mDetectionConsumed = false;
         startCameraPreview();
     }
 
@@ -366,5 +367,4 @@ public class MaterialBarcodeScannerFragment extends Fragment {
     }
 
 }
-
 
