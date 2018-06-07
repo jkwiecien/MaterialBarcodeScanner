@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.3.1'
+        classpath 'com.android.tools.build:gradle:3.1.2'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
 }
@@ -20,15 +20,12 @@ allprojects {
 ext {
     versionCode = "git --git-dir=${rootDir}/.git --work-tree=${rootDir} rev-list HEAD --first-parent --count".execute().text.trim().toInteger()
     versionName = "git --git-dir=${rootDir}/.git --work-tree=${rootDir} describe --tags --abbrev=0".execute().text.trim()
-    compileSdkVersion = 25
-    targetSdkVersion = 25
+    compileSdkVersion = 26
+    targetSdkVersion = 26
     minSdkVersion = 14
-    buildToolsVersion = "25.0.0"
-    supportLibraryVersion = '25.3.0'
-    playServicesVersion = '10.2.0'
+    buildToolsVersion = "27.0.3"
+    supportLibraryVersion = '27.1.1'
+    playServicesVisionVersion = '15.0.2'
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '2.12'
-}
 

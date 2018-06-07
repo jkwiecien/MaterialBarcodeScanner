@@ -25,10 +25,8 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'org.greenrobot:eventbus:3.0.0'
-    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
-    compile "com.google.android.gms:play-services-vision:$rootProject.ext.playServicesVersion"
-    compile "com.android.support:design:$rootProject.ext.supportLibraryVersion"
+    implementation 'org.greenrobot:eventbus:3.0.0'
+    implementation "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    implementation "com.google.android.gms:play-services-vision:$rootProject.ext.playServicesVisionVersion"
+    implementation "com.android.support:design:$rootProject.ext.supportLibraryVersion"
 }
