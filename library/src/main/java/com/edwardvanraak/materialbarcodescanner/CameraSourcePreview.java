@@ -18,12 +18,13 @@ package com.edwardvanraak.materialbarcodescanner;
 import android.Manifest;
 import android.content.Context;
 import android.content.res.Configuration;
-import android.support.annotation.RequiresPermission;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.ViewGroup;
+
+import androidx.annotation.RequiresPermission;
 
 import com.google.android.gms.common.images.Size;
 
@@ -111,7 +112,7 @@ public class CameraSourcePreview extends ViewGroup {
             try {
                 startIfReady();
             } catch (SecurityException se) {
-                Log.e(TAG,"Do not have permission to start the camera", se);
+                Log.e(TAG, "Do not have permission to start the camera", se);
             } catch (IOException e) {
                 Log.e(TAG, "Could not start camera source.", e);
             }
@@ -127,6 +128,7 @@ public class CameraSourcePreview extends ViewGroup {
         }
     }
 
+    @RequiresPermission(Manifest.permission.CAMERA)
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         int previewWidth = 320;

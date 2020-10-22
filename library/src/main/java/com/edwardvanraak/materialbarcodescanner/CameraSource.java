@@ -10,14 +10,15 @@ import android.hardware.Camera;
 import android.hardware.Camera.CameraInfo;
 import android.os.Build;
 import android.os.SystemClock;
-import android.support.annotation.Nullable;
-import android.support.annotation.RequiresPermission;
-import android.support.annotation.StringDef;
 import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.view.WindowManager;
+
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresPermission;
+import androidx.annotation.StringDef;
 
 import com.google.android.gms.common.images.Size;
 import com.google.android.gms.vision.Detector;
@@ -84,7 +85,8 @@ public class CameraSource {
             Camera.Parameters.FOCUS_MODE_MACRO
     })
     @Retention(RetentionPolicy.SOURCE)
-    private @interface FocusMode {}
+    private @interface FocusMode {
+    }
 
     @StringDef({
             Camera.Parameters.FLASH_MODE_ON,
@@ -94,7 +96,8 @@ public class CameraSource {
             Camera.Parameters.FLASH_MODE_TORCH
     })
     @Retention(RetentionPolicy.SOURCE)
-    private @interface FlashMode {}
+    private @interface FlashMode {
+    }
 
     private Context mContext;
 
@@ -571,12 +574,12 @@ public class CameraSource {
      * Starts camera auto-focus and registers a callback function to run when
      * the camera is focused.  This method is only valid when preview is active
      * (between {@link #start()} or {@link #start(SurfaceHolder)} and before {@link #stop()} or {@link #release()}).
-     *  Callers should check
+     * Callers should check
      * {@link #getFocusMode()} to determine if
      * this method should be called. If the camera does not support auto-focus,
      * it is a no-op and {@link AutoFocusCallback#onAutoFocus(boolean)}
      * callback will be called immediately.
-     *  If the current flash mode is not
+     * If the current flash mode is not
      * {@link Camera.Parameters#FLASH_MODE_OFF}, flash may be
      * fired during auto-focus, depending on the driver and camera hardware.
      *
@@ -1070,7 +1073,7 @@ public class CameraSource {
          */
         @SuppressLint("Assert")
         void release() {
-            assert (mProcessingThread.getState() == State.TERMINATED);
+            assert mProcessingThread == null || (mProcessingThread.getState() == State.TERMINATED);
             mDetector.release();
             mDetector = null;
         }
