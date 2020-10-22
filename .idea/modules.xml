@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/MaterialBarcodeScanner.iml" filepath="$PROJECT_DIR$/MaterialBarcodeScanner.iml" />
-      <module fileurl="file://$PROJECT_DIR$/library/library.iml" filepath="$PROJECT_DIR$/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/library/MaterialBarcodeScanner.library.iml" filepath="$PROJECT_DIR$/.idea/modules/library/MaterialBarcodeScanner.library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sample/MaterialBarcodeScanner.sample.iml" filepath="$PROJECT_DIR$/.idea/modules/sample/MaterialBarcodeScanner.sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Projects.MaterialBarcodeScanner.iml" filepath="$PROJECT_DIR$/.idea/modules/Projects.MaterialBarcodeScanner.iml" />
     </modules>
   </component>
 </project>
